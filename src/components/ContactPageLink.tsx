@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import ContactButton from '../components/ContactButton';
+import ContactButton from './ContactButton';
 
 
-export default function AboutUs() {
+export default function ContactPageLink() {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -75,7 +75,7 @@ export default function AboutUs() {
         <div className="relative z-[2] flex flex-col items-center gap-6 pointer-events-auto">
           <h2 
             ref={textRef}
-            className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight max-w-4xl"
+            className="text-white font-semi-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight max-w-4xl"
           >
             Let's Build Something<br/>
             Extraordinary

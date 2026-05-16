@@ -29,11 +29,10 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="text-white font-medium text-sm">Navigation</h4>
             <ul className="flex flex-col gap-2">
-              {['Home', 'Services', 'About Us', 'Contact'].map(item => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-slate-500 hover:text-white text-sm transition-colors">{item}</a>
-                </li>
-              ))}
+              <li><a href="/" className="text-slate-500 hover:text-white text-sm transition-colors">Home</a></li>
+              <li><a href="/#services" className="text-slate-500 hover:text-white text-sm transition-colors">Services</a></li>
+              <li><a href="/about" className="text-slate-500 hover:text-white text-sm transition-colors">About Us</a></li>
+              <li><a href="/#contact" className="text-slate-500 hover:text-white text-sm transition-colors">Contact</a></li>
             </ul>
           </div>
 

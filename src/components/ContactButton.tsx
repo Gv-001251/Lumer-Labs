@@ -12,7 +12,7 @@ const ContactButton = forwardRef<HTMLAnchorElement, ContactButtonProps>(
       <a
         ref={ref}
         href={href}
-        className="relative inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/100 text-white text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm mt-4 cursor-pointer"
+        className="relative inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/100 text-white text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 mt-4 cursor-pointer"
       >
         {label}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">

@@ -40,13 +40,18 @@ export default function Navbar() {
             className="flex items-center justify-center px-8 py-3 bg-white/5 backdrop-blur-lg border border-white/10 rounded-full shadow-2xl pointer-events-auto z-[1000]"
           >
             <div className="hidden md:flex items-center gap-8">
-              {['Home', 'Services', 'About Us', 'More Links'].map((link) => (
-                <a 
-                  key={link} 
-                  href={`#${link.toLowerCase().replace(' ', '-')}`}
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'Services', href: '/#services' },
+                { label: 'About Us', href: '/about' },
+                { label: 'More Links', href: '/#more-links' },
+              ].map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
                   className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
                 >
-                  {link}
+                  {label}
                 </a>
               ))}
             </div>
