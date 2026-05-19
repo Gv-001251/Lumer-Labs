@@ -41,10 +41,11 @@ export default function Navbar() {
           >
             <div className="hidden md:flex items-center gap-8">
               {[
-                { label: 'Home', href: '/' },
+                { label: 'Home', href: '/#home' },
                 { label: 'Services', href: '/#services' },
+                { label: 'Methods', href: '/#methods' },
                 { label: 'About Us', href: '/about' },
-                { label: 'More Links', href: '/#more-links' },
+                { label: 'Contact', href: '/#contact' },
               ].map(({ label, href }) => (
                 <a
                   key={label}
@@ -54,6 +55,33 @@ export default function Navbar() {
                   {label}
                 </a>
               ))}
+
+              {/* More Links Hover Dropdown */}
+              <div className="relative group py-2">
+                <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white transition-colors cursor-pointer">
+                  <span>More Links</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+
+                {/* Glassmorphic Dropdown Menu */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-[#090b11]/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-2 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-300 origin-top z-[9999]">
+                  {[
+                    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lumerlabsglh/' },
+                    { label: 'X (Twitter)', href: 'https://x.com/lumerlabs' },
+                    { label: 'Instagram', href: 'https://www.instagram.com/lumer_labs/' }
+                  ].map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all"
+                    >
+                      {social.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}

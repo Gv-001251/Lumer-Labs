@@ -37,8 +37,9 @@ export default function Hero() {
 
   return (
     <section 
+      id="home"
       ref={containerRef} 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020617]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent"
     >
       {/* Starry Background Effect */}
       <div 

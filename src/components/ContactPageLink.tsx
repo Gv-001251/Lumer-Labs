@@ -3,12 +3,11 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ContactButton from './ContactButton';
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactPageLink() {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLHeadingElement>(null);
-  const btnRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -21,11 +20,12 @@ export default function ContactPageLink() {
           start: 'top bottom',
           end: 'bottom top',
           scrub: true,
+          refreshPriority: 1,
         },
       });
 
       // Reveal animation for text and button
-      gsap.from([textRef.current, btnRef.current], {
+      gsap.from('.reveal-elem', {
         y: 40,
         opacity: 0,
         duration: 1,
@@ -34,8 +34,13 @@ export default function ContactPageLink() {
         scrollTrigger: {
           trigger: cardRef.current,
           start: 'top 80%',
+          refreshPriority: 1,
         },
       });
+
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
     }, containerRef);
 
     return () => ctx.revert();
@@ -43,7 +48,7 @@ export default function ContactPageLink() {
 
   return (
     <section 
-      id="about-us" 
+      id="contact" 
       ref={containerRef} 
       className="relative w-full px-4 sm:px-8 py-24 min-h-[90vh] flex items-center justify-center bg-[#020617]"
       style={{
@@ -69,18 +74,19 @@ export default function ContactPageLink() {
         />
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 z-[1] bg-black/30 pointer-events-none transition-colors duration-500 group-hover:bg-black/20" />
+        <div className="absolute inset-0 z-[1] pointer-events-none transition-colors duration-500" />
 
         {/* Content */}
         <div className="relative z-[2] flex flex-col items-center gap-6 pointer-events-auto">
           <h2 
-            ref={textRef}
-            className="text-white font-semi-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight max-w-4xl"
+            className="reveal-elem text-white font-semi-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight max-w-4xl"
           >
             Let's Build Something<br/>
             Extraordinary
           </h2>
-          <ContactButton ref={btnRef} href="#!" label="Contact" />
+          <div className="reveal-elem">
+            <ContactButton href="#!" label="Contact" />
+          </div>
         </div>
       </div>
     </section>

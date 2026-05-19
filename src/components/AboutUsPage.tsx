@@ -69,7 +69,7 @@ const team = [
   },
   {
     name: 'Hemachandran',
-    role: 'Designer & AI Developer',
+    role: 'Co-Founder, AI Developer & Designer',
     img: '/team/hemachandran.png',
     position: { top: '50%', right: '9%' } as React.CSSProperties,
     labelPos: 'right-below' as const,

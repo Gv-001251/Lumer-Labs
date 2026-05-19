@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="relative w-full py-20 px-6 sm:px-12 bg-[#020617] overflow-hidden border-t border-white/5">
       {/* Starry Background */}
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `url('/stars-bg.jpg')`,
           backgroundSize: 'cover',
@@ -31,6 +31,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               <li><a href="/" className="text-slate-500 hover:text-white text-sm transition-colors">Home</a></li>
               <li><a href="/#services" className="text-slate-500 hover:text-white text-sm transition-colors">Services</a></li>
+              <li><a href="/#methods" className="text-slate-500 hover:text-white text-sm transition-colors">Methods</a></li>
               <li><a href="/about" className="text-slate-500 hover:text-white text-sm transition-colors">About Us</a></li>
               <li><a href="/#contact" className="text-slate-500 hover:text-white text-sm transition-colors">Contact</a></li>
             </ul>
@@ -39,9 +40,15 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="text-white font-medium text-sm">Social</h4>
             <ul className="flex flex-col gap-2">
-              {['LinkedIn', 'X (Twitter)', 'Instagram'].map(item => (
-                <li key={item}>
-                  <a href="#" className="text-slate-500 hover:text-white text-sm transition-colors">{item}</a>
+              {[
+                { label: 'LinkedIn', url: 'https://www.linkedin.com/in/lumerlabsglh/' },
+                { label: 'X (Twitter)', url: '#' },
+                { label: 'Instagram', url: 'https://www.instagram.com/lumer_labs/' }
+              ].map(item => (
+                <li key={item.label}>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white text-sm transition-colors">
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -70,9 +77,9 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto mt-6 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-600 text-[10px] uppercase tracking-[0.2em]">
-        <p>© 2026 LumerLabs. All rights reserved.</p>
-        <p>Built with AI and Strategy.</p>
+      <div className="relative z-10 max-w-7xl mx-auto mt-6 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-600 text-[10px]">
+        <p>© 2026 LUMER LABS. ALL RIGHTS RESERVED.</p>
+        <p>BUILT WITH AI AND STRATEGY</p>
       </div>
     </footer>
   );

@@ -6,6 +6,17 @@
   font-display: swap;
 }
 
+.mask-fade {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
 @font-face {
   font-family: 'GcGatuzodemo';
   src: url('/fonts/GcGatuzodemoMedium-gwoJ1.ttf') format('truetype');
