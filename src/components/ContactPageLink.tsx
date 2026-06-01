@@ -50,21 +50,15 @@ export default function ContactPageLink() {
     <section 
       id="contact" 
       ref={containerRef} 
-      className="relative w-full px-4 sm:px-8 py-24 min-h-[90vh] flex items-center justify-center bg-[#020617]"
-      style={{
-        backgroundImage: `url('/stars-bg.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="relative w-full px-4 sm:px-8 py-24 min-h-[90vh] flex items-center justify-center bg-transparent"
     >
       <div 
         ref={cardRef}
-        className="relative w-full max-w-[95vw] lg:max-w-8xl h-[70vh] lg:h-[85vh] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col items-center justify-center p-6 text-center group isolate"
+        className="relative w-full max-w-[95vw] lg:max-w-8xl h-[70vh] lg:h-[85vh] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col items-center justify-center p-6 text-center group isolate bg-black"
       >
         {/* Background Image with parallax class */}
         <div 
-          className="about-bg absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none"
+          className="about-bg absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none opacity-90"
           style={{
             backgroundImage: `url('/about_us_bg.jpg')`,
             backgroundSize: 'cover',
@@ -85,7 +79,7 @@ export default function ContactPageLink() {
             Extraordinary
           </h2>
           <div className="reveal-elem">
-            <ContactButton href="#!" label="Contact" />
+            <ContactButton href="/contact" label="Contact" />
           </div>
         </div>
       </div>

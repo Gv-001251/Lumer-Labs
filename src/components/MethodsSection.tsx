@@ -75,7 +75,7 @@ const MethodsSection = () => {
     <section 
       id="methods"
       ref={containerRef} 
-      className="bg-[#050505] bg-[url('/stars-bg.jpg')] bg-cover bg-center bg-no-repeat text-white py-32 min-h-screen relative overflow-hidden flex flex-col"
+      className="bg-transparent text-white py-32 min-h-screen relative overflow-hidden flex flex-col"
     >
       <div className="max-w-6xl mx-auto w-full px-4 md:px-12 flex flex-col shrink-0">
         <div className="text-center mb-16">

@@ -2,17 +2,8 @@ import { useRef } from 'react';
 
 export default function Footer() {
   return (
-    <footer className="relative w-full py-20 px-6 sm:px-12 bg-[#020617] overflow-hidden border-t border-white/5">
-      {/* Starry Background */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `url('/stars-bg.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+    <footer className="relative w-full py-20 px-6 sm:px-12 overflow-hidden border-t border-white/5">
+
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
         <div className="flex flex-col gap-6 max-w-sm">
@@ -33,7 +24,7 @@ export default function Footer() {
               <li><a href="/#services" className="text-slate-500 hover:text-white text-sm transition-colors">Services</a></li>
               <li><a href="/#methods" className="text-slate-500 hover:text-white text-sm transition-colors">Methods</a></li>
               <li><a href="/about" className="text-slate-500 hover:text-white text-sm transition-colors">About Us</a></li>
-              <li><a href="/#contact" className="text-slate-500 hover:text-white text-sm transition-colors">Contact</a></li>
+              <li><a href="/contact" className="text-slate-500 hover:text-white text-sm transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -57,9 +48,14 @@ export default function Footer() {
           <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
             <h4 className="text-white font-medium text-sm">Legal</h4>
             <ul className="flex flex-col gap-2">
-              {['Privacy Policy', 'Terms of Service'].map(item => (
-                <li key={item}>
-                  <a href="#" className="text-slate-500 hover:text-white text-sm transition-colors">{item}</a>
+              {[
+                { label: 'Privacy Policy', url: '/privacy-policy' },
+                { label: 'Terms of Service', url: '/terms' }
+              ].map(item => (
+                <li key={item.label}>
+                  <a href={item.url} className="text-slate-500 hover:text-white text-sm transition-colors">
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -79,7 +75,6 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto mt-6 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-600 text-[10px]">
         <p>© 2026 LUMER LABS. ALL RIGHTS RESERVED.</p>
-        <p>BUILT WITH AI AND STRATEGY</p>
       </div>
     </footer>
   );

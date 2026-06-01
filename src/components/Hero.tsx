@@ -41,17 +41,7 @@ export default function Hero() {
       ref={containerRef} 
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent"
     >
-      {/* Starry Background Effect */}
-      <div 
-        ref={starsRef}
-        className="absolute inset-0 z-0 opacity-80"
-        style={{
-          backgroundImage: `url('/stars-bg.jpg')`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+
       
       {/* Subtle radial gradient overlay for depth */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,rgba(2,6,23,0)_70%)] pointer-events-none" />

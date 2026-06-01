@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import TermsOfPolicy from '../components/TermsOfPolicy';
+---
+
+<Layout title="Terms & Conditions - LumerLabs">
+	<Navbar client:load />
+	<main>
+		<TermsOfPolicy client:load />
+	</main>
+	<Footer client:load />
+</Layout>
