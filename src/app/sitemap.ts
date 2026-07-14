@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.lumerlabs.in'; // Replace with your production domain
+  const baseUrl = 'https://www.lumerlabs.in';
 
   return [
     {

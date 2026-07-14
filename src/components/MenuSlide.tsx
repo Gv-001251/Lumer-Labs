@@ -46,7 +46,11 @@ export function MenuSlide({ isOpen, onClose }: MenuSlideProps) {
       }, 400);
     } else {
       setTimeout(() => {
-        router.push(`/#${targetId}`);
+        if (targetId === "hero") {
+          router.push("/");
+        } else {
+          router.push(`/#${targetId}`);
+        }
       }, 400);
     }
   };

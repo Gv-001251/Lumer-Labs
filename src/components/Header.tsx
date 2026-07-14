@@ -33,7 +33,11 @@ export function Header() {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      router.push(`/#${id}`);
+      if (id === "hero") {
+        router.push("/");
+      } else {
+        router.push(`/#${id}`);
+      }
     }
   };
 
@@ -48,7 +52,7 @@ export function Header() {
         <div className="max-w-6xl mx-auto w-full flex justify-between items-center">
           {/* Brand Logo */}
           <a
-            href="#hero"
+            href="/"
             onClick={(e) => handleNavClick(e, "hero")}
             className="text-lg font-primary font-semibold text-[#F5F5F7] hover:text-white transition-colors duration-300 pointer-events-auto"
             id="header-logo"

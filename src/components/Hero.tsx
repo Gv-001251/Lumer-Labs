@@ -42,7 +42,13 @@ export function Hero() {
     )
       return;
 
-    // Ensure the video plays and is loop/muted
+    // Force scroll to top on mount to ensure clean ScrollTrigger initialization (unless we have a hash)
+    if (typeof window !== "undefined" && !window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+    ScrollTrigger.clearScrollMemory();
+
+    // Ensure video plays and is loop/muted
     video.muted = true;
     video.play().catch((err) => {
       console.log("Auto-play blocked or interrupted, attempting retry:", err);
@@ -144,8 +150,14 @@ export function Hero() {
     };
     window.addEventListener("resize", handleResize);
 
+    // Delayed ScrollTrigger refresh on mount to align animation trigger heights
+    const refreshTimeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 250);
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      clearTimeout(refreshTimeout);
       if (tl.scrollTrigger) tl.scrollTrigger.kill();
       tl.kill();
     };

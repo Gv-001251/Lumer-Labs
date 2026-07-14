@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { LenisProvider } from "@/components/LenisProvider";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
@@ -7,6 +8,11 @@ import { Contact } from "@/components/Contact";
 import { Showcase } from "@/components/Showcase";
 import { Footer } from "@/components/Footer";
 import { Preloader } from "@/components/Preloader";
+
+export const metadata: Metadata = {
+  title: "Lumer Labs | AI, Web Development & Digital Solutions",
+  description: "We are Lumer Labs, a growth and creative agency pioneering the intersection of artificial intelligence and strategic creativity to build the future of digital experiences.",
+};
 
 export default function Home() {
   return (

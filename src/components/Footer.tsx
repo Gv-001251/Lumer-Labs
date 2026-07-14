@@ -90,7 +90,11 @@ export function Footer() {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      router.push(`/#${id}`);
+      if (id === "hero") {
+        router.push("/");
+      } else {
+        router.push(`/#${id}`);
+      }
     }
   };
 
