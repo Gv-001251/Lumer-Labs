@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: "Lumer Labs",
     images: [
       {
-        url: "https://www.lumerlabs.in/lumerlabs-png.png",
-        width: 1200,
-        height: 630,
+        url: "https://www.lumerlabs.in/lumer_labs_logo.png",
+        width: 4961,
+        height: 3508,
         alt: "Lumer Labs",
       },
     ],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Lumer Labs | Growth and Creative Agency",
     description:
       "Lumer Labs is a growth and creative agency specializing in AI solutions, web development, custom software, mobile apps, automation, SaaS development, UI/UX design, branding, and digital marketing.",
-    images: ["https://www.lumerlabs.in/icon.svg"],
+    images: ["https://www.lumerlabs.in/lumer_labs_logo.png"],
   },
 };
 
